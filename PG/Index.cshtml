@@ -1,0 +1,19 @@
+@model int
+
+@{
+    ViewData["Title"] = "Password Generator";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" action="/Home/Generate">
+    <label for="length">Password Length:</label>
+    <input type="number" id="length" name="length" value="@Model" />
+
+    <button type="submit">Generate Password</button>
+</form>
+
+@if (ViewBag.Password != null)
+{
+    <p>Your new password is: @ViewBag.Password</p>
+}
